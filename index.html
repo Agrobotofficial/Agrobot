@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content=",Agrobot, Resource center for robot and how we made it, 3d model, Image G​​​allery, materials used, code,Gyani Rover usually reopresents Gyani as Gyanodaya and Rober as remotely operated vechile.
     Brilliant students of Gyanodaya’s Students Gyanodaya Secondary School of Bafal always comes first in everything. ">
-    <meta name="description" content="Agrobot,Agrobot is Agricultral Robot. It make easy to Farmer.Aashish Zha,Aashish Jha,Agro-bot,AGROBOT  ">
+    <meta name="description" content="Agrobot ">
     <title>Agrobot</title>
     <link rel="stylesheet" href="cast.css" media="screen">
 <link rel="stylesheet" href="Home.css" media="screen">
@@ -351,146 +351,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         <div class="u-container-style u-group u-palette-4-light-1 u-radius-30 u-shape-round u-group-2">
           <div class="u-container-layout u-valign-top u-container-layout-2">
             <p class="u-text u-text-body-color u-text-default u-text-2"><u><h1>Code 1</h1></u>
-            	#include <Servo.h> // Include Servo Library.<br>
-int in1 = 7; // L298N PINS<br>
-int in2 = 8;<br>
-int in3 = 9;<br>
-int in4 = 10;<br>
-int enA = 5; // L298N SPEED CONTROL ENABLE<br>
-int enB = 6;<br>
-<br>
-<br>
-<br>
-//CODE THAT WILL RUN ONCE<br>
-void setup()<br>
-{<br>
-//L298N PIN AS OUTPUT<br>
-pinMode(in1, OUTPUT);<br>
-pinMode(in2, OUTPUT);<br>
-pinMode(in3, OUTPUT);<br>
-pinMode(enA, OUTPUT);<br>
-pinMode(enB, OUTPUT);<br>
-<br>
-<br>
-Serial.begin(9600); //SERIAL BEGIN FOR BLUETOOTH<br>
-}<br>
-<br>
-void loop()<br>
-{<br>
-if (Serial.available()) //IF BLUETOOTH AVILABLE<br>
-BLUETOOTH(); //GO TO BLUETOOTH FUNCTION<br>
-}<br>
-<br>
-<br>
-void forward() //GO FORWRD FUNCTION<br>
-{<br>
-analogWrite(enA, 170); //speed is higher the enA &amp; enB value (0-255)<br>
-analogWrite(enB, 170);<br>
-digitalWrite(in1, HIGH);<br>
-digitalWrite(in2, LOW);<br>
-digitalWrite(in3, HIGH);<br>
-digitalWrite(in4, LOW);<br>
-}<br>
-<br>
-void backward() //GO BACKWARD FUNCTION<br>
-{<br>
-analogWrite(enA, 170); //speed is higher the enA &amp; enB value (0-255)<br>
-analogWrite(enB, 170);<br>
-digitalWrite(in1, LOW);<br>
-digitalWrite(in2, HIGH);<br>
-digitalWrite(in3, LOW);<br>
-digitalWrite(in4, HIGH);<br>
-}<br>
-void turn_right() //TURN RIGHT FUNCTION<br>
-{<br>
-digitalWrite(in1, HIGH);<br>
-digitalWrite(in2, LOW);<br>
-digitalWrite(in3, LOW);<br>
-digitalWrite(in4, HIGH);<br>
-}<br>
-<br>
-void turn_left() //TURN LEFT FUNCTION<br>
-{<br>
-digitalWrite(in1, LOW);<br>
-digitalWrite(in2, HIGH);<br>
-digitalWrite(in3, HIGH);<br>
-digitalWrite(in4, LOW);<br>
-}<br>
-void st() //STOP FUNCTION<br>
-{<br>
-digitalWrite(in1, LOW);<br>
-digitalWrite(in2, LOW);<br>
-digitalWrite(in3, LOW);<br>
-digitalWrite(in4, LOW);<br>
-}<br>
-void BLUETOOTH() //BLUETOOTH FUNCTION<br>
-{<br>
-// YOUR DEFAULTS<br>
-char data = Serial.read(); //VARIABLE VALUE IS SERIAL VALUE<br>
-Serial.println(data); //PRINT SERIAL VALUE<br>
-if (data == 'B') //IF SERIAL VALUE IS &quot;F&quot; CALL FORWARD FUNCTION<br>
-{<br>
-forward();<br>
-Serial.println(&quot;BLUETOOTH MODE&quot;); //PRINT BLUETOOTH MODE IN SERIAL MONITOR<br>
-}<br>
-<br>
-else if (data == 'F') //IF SERIAL VALUE IS &quot;B&quot; CALL BACKWARD FUNCTION<br>
-{<br>
-backward();<br>
-Serial.println(&quot;BLUETOOTH MODE&quot;);<br>
-}<br>
-<br>
-else if (data == 'L') //IF SERIAL VALUE IS &quot;L&quot; CALL TURN LEFT FUNCTION<br>
-{<br>
-turn_left();<br>
-Serial.println(&quot;BLUETOOTH MODE&quot;);<br>
-}<br>
-<br>
-else if (data == 'R') //IF SERIAL VALUE IS &quot;R&quot; CALL TURN RIGHT FUNCTION<br>
-{<br>
-turn_right();<br>
-Serial.println(&quot;BLUETOOTH MODE&quot;);<br>
-}<br>
-<br>
-else if (data == 'S') //IF SERIAL VALUE IS &quot;S&quot; CALL STOP FUNCTION<br>
-{<br>
-st();<br>
-Serial.println(&quot;BLUETOOTH MODE&quot;);<br>
-}<br>
-}<br>
-<br>
-<br>
-<u><h1>Code 2</h1></u>
-#include <Servo.h> // include servo library to use its related functions<br>
-#define Servo_PWM 6 // A descriptive name for D6 pin of Arduino to provide PWM signal<br>
-Servo MG995_Servo; // Define an instance of of Servo with the name of &quot;MG995_Servo&quot;<br>
- <br>
-<br>
-<br>
-void setup() {<br>
- MG995_Servo.attach(Servo_PWM); // Connect D6 of Arduino with PWM signal pin of servo motor<br>
-<br>
-<br>
-}<br>
-<br>
-<br>
-void loop() {<br>
- delay(3000);<br>
- MG995_Servo.write(90);<br>
- delay(3000);<br>
- MG995_Servo.write(180);<br>
- delay(3000);<br>
- MG995_Servo.write(270);<br>
- delay(3000);<br>
- MG995_Servo.write(360);<br>
- delay(3000);<br>
- MG995_Servo.attach(Servo_PWM);<br>
-}<br>
-<br>
-
-          </div>
-        </div>
-      </div>
+            	#include <Servo.h> // Include Servo Library.<br>int in1 = 7; // L298N PINS<br>int in2 = 8;<br>int in3 = 9;<br>int in4 = 10;<br>int enA = 5; // L298N SPEED CONTROL ENABLE<br>int enB = 6;<br><br><br><br>//CODE THAT WILL RUN ONCE<br>void setup()<br>{<br>//L298N PIN AS OUTPUT<br>pinMode(in1, OUTPUT);<br>pinMode(in2, OUTPUT);<br>pinMode(in3, OUTPUT);<br>pinMode(enA, OUTPUT);<br>pinMode(enB, OUTPUT);<br><br><br>Serial.begin(9600); //SERIAL BEGIN FOR BLUETOOTH<br>}<br><br>void loop()<br>{<br>if (Serial.available()) //IF BLUETOOTH AVILABLE<br>BLUETOOTH(); //GO TO BLUETOOTH FUNCTION<br>}<br><br><br>void forward() //GO FORWRD FUNCTION<br>{<br>analogWrite(enA, 170); //speed is higher the enA &amp; enB value (0-255)<br>analogWrite(enB, 170);<br>digitalWrite(in1, HIGH);<br>digitalWrite(in2, LOW);<br>digitalWrite(in3, HIGH);<br>digitalWrite(in4, LOW);<br>}<br><br>void backward() //GO BACKWARD FUNCTION<br>{<br>analogWrite(enA, 170); //speed is higher the enA &amp; enB value (0-255)<br>analogWrite(enB, 170);<br>digitalWrite(in1, LOW);<br>digitalWrite(in2, HIGH);<br>digitalWrite(in3, LOW);<br>digitalWrite(in4, HIGH);<br>}<br>void turn_right() //TURN RIGHT FUNCTION<br>{<br>digitalWrite(in1, HIGH);<br>digitalWrite(in2, LOW);<br>digitalWrite(in3, LOW);<br>digitalWrite(in4, HIGH);<br>}<br><br>void turn_left() //TURN LEFT FUNCTION<br>{<br>digitalWrite(in1, LOW);<br>digitalWrite(in2, HIGH);<br>digitalWrite(in3, HIGH);<br>digitalWrite(in4, LOW);<br>}<br>void st() //STOP FUNCTION<br>{<br>digitalWrite(in1, LOW);<br>digitalWrite(in2, LOW);<br>digitalWrite(in3, LOW);<br>digitalWrite(in4, LOW);<br>}<br>void BLUETOOTH() //BLUETOOTH FUNCTION<br>{<br>// YOUR DEFAULTS<br>char data = Serial.read(); //VARIABLE VALUE IS SERIAL VALUE<br>Serial.println(data); //PRINT SERIAL VALUE<br>if (data == 'B') //IF SERIAL VALUE IS &quot;F&quot; CALL FORWARD FUNCTION<br>{<br>forward();<br>Serial.println(&quot;BLUETOOTH MODE&quot;); //PRINT BLUETOOTH MODE IN SERIAL MONITOR<br>}<br><br>else if (data == 'F') //IF SERIAL VALUE IS &quot;B&quot; CALL BACKWARD FUNCTION<br>{<br>backward();<br>Serial.println(&quot;BLUETOOTH MODE&quot;);<br>}<br><br>else if (data == 'L') //IF SERIAL VALUE IS &quot;L&quot; CALL TURN LEFT FUNCTION<br>{<br>9turn_left();<br>}<br><br>else if (data == 'R') //IF SERIAL VALUE IS &quot;R&quot; CALL TURN RIGHT FUNCTION<br>{<br>turn_right();<br>Serial.println(&quot;BLUETOOTH MODE&quot;);<br>}<br><br>else if (data == 'S') //IF SERIAL VALUE IS &quot;S&quot; CALL STOP FUNCTION<br>{<br>st();<br>Serial.println(&quot;BLUETOOTH MODE&quot;);<br>}<br>}<br><br><br><u><h1>Code 2</h1></u>#include <Servo.h> // include servo library to use its related functions<br>#define Servo_PWM 6 // A descriptive name for D6 pin of Arduino to provide PWM signal<br>Servo MG995_Servo; // Define an instance of of Servo with the name of &quot;MG995_Servo&quot;<br><br><br><br>void setup() {<br> MG995_Servo.attach(Servo_PWM); // Connect D6 of Arduino with PWM signal pin of servo motor<br><br><br>}<br><br><br>void loop() {<br> delay(3000);<br> MG995_Servo.write(90);<br>delay(3000);<br>MG995_Servo.write(180);<br>delay(3000);<br> MG995_Servo.write(270);<br> delay(3000);<br> MG995_Servo.write(360);<br> delay(3000);<br> MG995_Servo.attach(Servo_PWM);<br>}<br><br>
+            	 </div></div> </div>
     </section>
     <section class="u-clearfix u-grey-50 u-section-9" id="sec-416d">
       <div class="u-clearfix u-sheet u-sheet-1">
